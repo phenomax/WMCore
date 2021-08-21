@@ -55,3 +55,7 @@ MATCH_RUCIO_AUTH=`cat $WMAGENT_SECRETS_LOCATION | grep RUCIO_AUTH | sed s/RUCIO_
 sed -i "s+^rucio_host.*+rucio_host = $MATCH_RUCIO_HOST+" $RUCIO_HOME/etc/rucio.cfg
 sed -i "s+^auth_host.*+auth_host = $MATCH_RUCIO_AUTH+" $RUCIO_HOME/etc/rucio.cfg
 echo "Updated RUCIO_HOME file under: $RUCIO_HOME"
+
+# Make screen command work
+mkdir ~/.screen && chmod 700 ~/.screen
+export SCREENDIR=$HOME/.screen
